@@ -8,17 +8,17 @@
 1. Create an environment
 
 ```bash
-conda create -n vevn python=3.10 -y
+conda create -n insurance python=3.8 -y
 
 
-conda activate venv
+conda activate insurance
 
 ```
 
 2. Activate the environment
 
 ```bash
-conda activate venv
+conda activate insurance
 ```
 
 
