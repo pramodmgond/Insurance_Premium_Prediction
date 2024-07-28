@@ -44,4 +44,3 @@ pip install -r requirements.txt
 
 ```
 
-OPENAI API KEY = "https://platform.openai.com/api-keys"
