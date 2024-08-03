@@ -1,5 +1,9 @@
 # Insurance_Premium_Prediction
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 2bdf1516679c15aa4bf4b2a90cf42bfa606c2fc6
 
 ## How to run:
 
