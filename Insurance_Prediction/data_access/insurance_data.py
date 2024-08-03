@@ -56,6 +56,8 @@ class InsuranceData:
             logging.info(f"Data frame created with the help of insurance_data.py")
 
             # Drop duplicate entries if necessary
+            if "id" in df.columns :
+                df.drop(columns = "id", inplace = True)
             df.drop_duplicates(inplace=True, ignore_index=True)
             
             return df

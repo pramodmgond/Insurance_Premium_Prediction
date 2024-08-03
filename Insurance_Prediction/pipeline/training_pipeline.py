@@ -1,7 +1,7 @@
 from Insurance_Prediction.exception import InsuranceException
 from Insurance_Prediction.logger import logging
 
-from Insurance_Prediction.components.data_ingestion import DataIngestion
+from Insurance_Prediction.components.data_ingestion_old import DataIngestion
 
 from Insurance_Prediction.entity.config_entity import (DataIngestionConfig)                                   
 from Insurance_Prediction.entity.artifact_entity import (DataIngestionArtifact)
