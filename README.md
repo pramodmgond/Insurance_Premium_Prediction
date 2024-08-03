@@ -1,7 +1,5 @@
 # Insurance_Premium_Prediction
 
-# Interview_questions_creater
-
 
 ## How to run:
 

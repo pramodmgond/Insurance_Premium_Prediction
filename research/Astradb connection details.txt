@@ -1,0 +1,6 @@
+to check wheather  a table is created or not 
+use keyspace name 
+select * from table name
+
+database name insurance_data
+region us-east-2
