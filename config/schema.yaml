@@ -1,0 +1,39 @@
+columns:
+  - age: int
+  - sex: category
+  - bmi: float
+  - children: int
+  - smoker: category
+  - region: category
+  - expenses: float
+
+numerical_columns:
+  - age
+  - bmi
+  - children
+  - expenses
+
+categorical_columns:
+  - sex
+  - smoker
+  - region
+
+
+# drop_columns:
+#   - case_id
+#   - yr_of_estab
+
+# for data transformation
+num_features:
+  - age
+  - bmi
+
+
+oh_columns:
+  - sex
+  - smoker
+  - region
+
+transform_columns:
+  - age
+  - bmi
