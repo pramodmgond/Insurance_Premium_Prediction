@@ -3,10 +3,17 @@ from Insurance_Prediction.logger import logging
 
 from Insurance_Prediction.components.data_ingestion_old import DataIngestion
 from Insurance_Prediction.components.data_validation import DataValidation
+from Insurance_Prediction.components.data_transformation import DataTransformation
 
 
-from Insurance_Prediction.entity.config_entity import (DataIngestionConfig, DataValidationConfig)                                   
-from Insurance_Prediction.entity.artifact_entity import (DataIngestionArtifact, DataValidationArtifact)
+
+from Insurance_Prediction.entity.config_entity import (DataIngestionConfig, 
+                                                       DataValidationConfig,
+                                                    DataTransformationConfig) 
+                                  
+from Insurance_Prediction.entity.artifact_entity import (DataIngestionArtifact, 
+                                                         DataValidationArtifact,
+                                                         DataTransformationArtifact)
 
 import os
 import sys 
@@ -15,7 +22,7 @@ class TrainPipeline:
     def __init__(self):
         self.data_ingestion_config = DataIngestionConfig()
         self.data_validation_config = DataValidationConfig()
-
+        self.data_transformation_config = DataTransformationConfig()
 
 
 
@@ -63,6 +70,20 @@ class TrainPipeline:
         except Exception as e:
             raise InsuranceException(e, sys) from e
         
+        
+    def start_data_transformation(self, data_ingestion_artifact: DataIngestionArtifact, data_validation_artifact: DataValidationArtifact) -> DataTransformationArtifact:
+        """
+        This method of TrainPipeline class is responsible for starting data transformation component
+        """
+        try:
+            data_transformation = DataTransformation(data_ingestion_artifact=data_ingestion_artifact,
+                                                     data_transformation_config=self.data_transformation_config,
+                                                     data_validation_artifact=data_validation_artifact)
+            data_transformation_artifact = data_transformation.initiate_data_transformation()
+            return data_transformation_artifact
+        except Exception as e:
+            raise InsuranceException(e, sys)
+        
 
         
     
@@ -74,8 +95,8 @@ class TrainPipeline:
         try:
             data_ingestion_artifact = self.start_data_ingestion()
             data_validation_artifact = self.start_data_validation(data_ingestion_artifact=data_ingestion_artifact)
-
-        
+            data_transformation_artifact = self.start_data_transformation(
+                data_ingestion_artifact=data_ingestion_artifact, data_validation_artifact=data_validation_artifact)
         
         except Exception as e:
             raise InsuranceException(e, sys)
