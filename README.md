@@ -45,7 +45,7 @@ pip install -r requirements.txt
 4. git push origin main
 ```
 
-Export the environment variable - AWS setup 
+### Export the environment variable - AWS setup 
 
 ```bash
 export AWS_ACCESS_KEY_ID=<AWS_ACCESS_KEY_ID>
