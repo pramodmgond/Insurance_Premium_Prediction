@@ -1,9 +1,6 @@
-# Insurance_Premium_Prediction
-
-<<<<<<< HEAD
+# Insurance_Premium_Predict
 =======
 
->>>>>>> 2bdf1516679c15aa4bf4b2a90cf42bfa606c2fc6
 
 ## How to run:
 
@@ -48,3 +45,11 @@ pip install -r requirements.txt
 4. git push origin main
 ```
 
+Export the environment variable - AWS setup 
+
+```bash
+export AWS_ACCESS_KEY_ID=<AWS_ACCESS_KEY_ID>
+```
+```bash
+export AWS_SECRET_ACCESS_KEY=<AWS_SECRET_ACCESS_KEY>
+```
