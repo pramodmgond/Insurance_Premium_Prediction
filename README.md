@@ -48,8 +48,8 @@ pip install -r requirements.txt
 ### Export the environment variable - AWS setup 
 
 ```bash
-export AWS_ACCESS_KEY_ID=<AWS_ACCESS_KEY_ID>
+export AWS_ACCESS_KEY_ID="AWS_ACCESS_KEY_ID"
 ```
 ```bash
-export AWS_SECRET_ACCESS_KEY=<AWS_SECRET_ACCESS_KEY>
+export AWS_SECRET_ACCESS_KEY="AWS_SECRET_ACCESS_KEY"
 ```

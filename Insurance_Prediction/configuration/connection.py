@@ -7,6 +7,7 @@ from Insurance_Prediction.constants import ASTRA_DB_SECURE_BUNDLE_PATH, ASTRADB_
 from Insurance_Prediction.exception import InsuranceException
 from Insurance_Prediction.logger import logging
 
+# astra db connection settings
 class AstraDBClient:
     """
     A class to manage connections and operations with DataStax AstraDB.

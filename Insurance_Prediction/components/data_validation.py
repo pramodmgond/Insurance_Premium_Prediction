@@ -134,7 +134,7 @@ class DataValidation:
                 validation_error_msg += f"Columns are missing in test dataframe."
 
             status = self.is_column_exist(df=train_df)
-
+           
             if not status:
                 validation_error_msg += f"Columns are missing in training dataframe."
             status = self.is_column_exist(df=test_df)
