@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Insurance Premium Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/style.css')}}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  </head>
+  <body>
+    <nav class="navbar navbar-light bg-light static-top">
+        <div class="container-fluid">
+        <a class="navbar-brand">
+            <img src="https://bsmedia.business-standard.com/_media/bs/img/article/2024-07/11/full/1720638549-7273.jpg?im=FeatureCrop,size=(826,465)" alt="Insurance Brand" />
+        </a>
+        
+        </div>
+     </nav>
+    <section>
+        <div class="container-fluid">
+            <div class="container">
+                <form action="/" method="post">
+                    <legend>Insurance Prediction Form</legend>
+                    <div class="mb-3">
+                      <label for="age" >age</label>
+                      <input type="number" class="form-control" id="age" name="age" placeholder="Enter your age" required="required" step="0.1" min="0" max="100">
+                    </div>
+        
+                    <div class="mb-3">
+                      <label for="bmi">Body Mass Index</label>
+                      <input type="number" class="form-control" id="bmi" name="bmi" placeholder="Enter your BMI" required="required" step="0.1" min="0" max="100">
+                    </div>
+        
+                    <div class="mb-3">
+                      <label for="children">Number of Childrens</label>
+                      <input type="number" class="form-control" id="children" name="children" min="0" max="10" placeholder="select between 0 to 10" required="required">
+                    </div>
+        
+                    <div class="mb-3">
+                      <label for="region">region</label>
+                      <select class="form-control" id="region" name="region" placeholder="region" required="required">
+                          <option value="" disabled selected>Region</option>
+                          <option>southwest</option>
+                          <option>southeast</option>
+                          <option>northwest</option>
+                          <option>northeast</option>
+                      </select>
+                    </div>
+        
+                    <div class="mb-3">
+                      <label for="sex">sex</label>
+                      <select class="form-control" id="sex" name="sex" placeholder="sex" required="required">
+                          <option value="" disabled selected>sex</option>
+                          <option>male</option>
+                          <option>female</option>
+                      </select>
+
+                    </div>
+                      
+                    <div class="mb-3">
+                      <label for="smoker">Select smoker</label>
+                      <select class="form-control" id="smoker" name="smoker" placeholder="smoker" required="required">
+                        <option value="" disabled selected>smoker</option>
+                        <option>yes</option>
+                        <option>no</option>
+                      </select>
+                    </div>
+      
+        
+                      <input class="btn btn-primary" type="submit" value="Predict Insurance Premimum" required />
+                    </div>
+                    
+                </form>
+            </div>
+            <div class="text-center text-black">
+                <h2 class="display-4 fw-bolder">Insurance Premimum Value: {{context}} </h2>
+            </div>
+        </div>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script type="text/javascript">
+        $(".input").focus(function(){
+            $(this).parent().addClass("focus");
+        }).blur(function(){
+            if($(this).val() === ''){
+                $(this).parent().removeClass("focus");
+            }
+        })
+    </script>
+  </body>
+</html>
