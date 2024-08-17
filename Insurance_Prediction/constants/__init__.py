@@ -8,8 +8,13 @@ from urllib.parse import quote_plus
 
 
 
-ASTRA_DB_SECURE_BUNDLE_PATH = r'C:\Users\pramod\Desktop\INURON\Internship\Insurance_Premium_Prediction\research\secure-connect-insurance.zip'
-ASTRADB_APPLICATION_TOKEN = r'C:\Users\pramod\Desktop\INURON\Internship\Insurance_Premium_Prediction\research\Insurance-token.json'
+# ASTRA_DB_SECURE_BUNDLE_PATH = r'C:\Users\pramod\Desktop\INURON\Internship\Insurance_Premium_Prediction\research\secure-connect-insurance.zip'
+# ASTRADB_APPLICATION_TOKEN = r'C:\Users\pramod\Desktop\INURON\Internship\Insurance_Premium_Prediction\research\Insurance-token.json'
+
+
+ASTRA_DB_SECURE_BUNDLE_PATH = os.path.join("AstraDB_Keys","secure-connect-insurance.zip")
+ASTRADB_APPLICATION_TOKEN = os.path.join("AstraDB_Keys", "Insurance-token.json")
+
 
 PIPELINE_NAME: str = "insurance"
 ARTIFACT_DIR: str = "artifact"

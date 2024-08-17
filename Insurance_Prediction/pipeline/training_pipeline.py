@@ -164,6 +164,7 @@ class TrainPipeline:
                 logging.info(f"Model not accepted.")
                 return None
             model_pusher_artifact = self.start_model_pusher(model_evaluation_artifact=model_evaluation_artifact)
+            logging.info(f"Model  accepted and Saved New Model.")
 
         
         except Exception as e:
